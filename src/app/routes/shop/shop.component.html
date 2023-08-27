@@ -1,0 +1,9 @@
+<div class="shop-container">
+  <app-card-list [list]="items">
+    <ng-template let-item #card>
+      <div>
+        <app-card [item]="item"></app-card>
+      </div>
+		</ng-template>
+  </app-card-list>
+</div>

@@ -1,0 +1,13 @@
+<mat-card class="example-card">
+  <mat-card-header>
+    <mat-card-title>{{item.title}}</mat-card-title>
+    <mat-card-subtitle>{{item.title}}</mat-card-subtitle>
+  </mat-card-header>
+  <img mat-card-image [src]="item.image" [alt]="item.alt">
+  <mat-card-content>
+    <p>{{item.description}}</p>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-button>Buy</button>
+  </mat-card-actions>
+</mat-card>

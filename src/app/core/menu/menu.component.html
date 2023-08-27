@@ -1,0 +1,9 @@
+<div class="menu-container">
+  <ul *ngIf="list">
+    <li *ngFor="let item of list" >
+          <button routerLink="{{ item.link }}" routerLinkActive="active">
+            {{ item.name }}
+          </button>
+    </li>
+  </ul>
+</div>

@@ -1,0 +1,5 @@
+@import "../../../mixins";
+
+.shop-container {
+  @include flex(center, flex-start, column);
+}

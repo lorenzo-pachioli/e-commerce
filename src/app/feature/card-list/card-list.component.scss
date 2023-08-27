@@ -1,0 +1,37 @@
+@import '../../../mixins';
+
+.cardList-container {
+
+
+    ul {
+        @include flex(center, flex-start, row);
+        width: 100%;
+        min-height: 70%;
+        list-style: none;
+        padding: 0;
+        flex-wrap: wrap;
+    }
+
+    li {
+        width: 25%;
+        padding: var(--padding1);
+    }
+
+    h1 {
+        color: var(--color5);
+        border: var(--border5);
+        border-radius: var(--radius1);
+        padding: 20px;
+    }
+}
+
+.spinner::ng-deep .mat-progress-spinner circle,
+.mat-spinner circle {
+    stroke: var(--color5);
+    color: var(--color5);
+}
+
+.spinner {
+    @include flex(center, center, column);
+    color: var(--color5);
+}
