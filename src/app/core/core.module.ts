@@ -8,6 +8,7 @@ import { SharedModule } from '../shared/shared.module';
 import { FeatureModule } from '../feature/feature.module';
 import { RoutesModule } from '../routes/routes.module';
 import { AppRoutingModule } from '../app-routing.module';
+import { StateModule } from '../state/state.module';
 
 
 
@@ -23,7 +24,8 @@ import { AppRoutingModule } from '../app-routing.module';
     SharedModule,
     FeatureModule,
     RoutesModule,
-    AppRoutingModule
+    AppRoutingModule,
+    StateModule
   ],
   exports: [
     HeaderComponent,

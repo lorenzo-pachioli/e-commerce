@@ -1,4 +1,9 @@
-<div class="header-container">
+<div class="header-container" >
   <h1>header works!</h1>
-  <p>nav bar</p>
+  <div *ngIf="store$ | async as store"> 
+    <p>user: {{ store.user }}</p>
+    <p>cart: {{ store.cart.length }}</p>
+  </div>
+  <button (click)="remove()">remove</button>
+  <button (click)="reset()">reset</button>
 </div>

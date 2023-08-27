@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { CardListComponent } from './card-list/card-list.component';
 import { CardComponent } from './card/card.component';
 import { MaterialModule } from '../material/material.module';
+import { StateModule } from '../state/state.module';
 
 @NgModule({
   declarations: [
@@ -11,7 +12,8 @@ import { MaterialModule } from '../material/material.module';
   ],
   imports: [
     CommonModule,
-    MaterialModule
+    MaterialModule,
+    StateModule
   ],
   exports: [
     CardListComponent,
