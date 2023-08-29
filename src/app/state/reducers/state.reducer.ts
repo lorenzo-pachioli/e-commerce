@@ -31,19 +31,32 @@ export const stateReducer = createReducer(
     return { ...state, cart: [...state.cart, item] };
   }),
   on(removeItem, (state, { id }) => {
+    if (state.cart.some(cartItem => cartItem.id === id && cartItem.quantity > 0)) {
+      const newCart = state.cart.map(cartItem => cartItem.id === id ? (itemQuantityMinus(cartItem)) : (cartItem));
+      return { ...state, cart: newCart };
+    }
     const newCart = state.cart.filter(toRemove => toRemove.id !== id);
     return { ...state, cart: newCart };
   }),
   on(resetCart, (state) => ({ ...state, cart: [] }))
 );
 
-const itemQuantityPlus = (item: item) => {
-  console.log(item);
+const itemQuantityPlus = (item: item) => itemQuantityModiy(item, 'plus');
+const itemQuantityMinus = (item: item) => itemQuantityModiy(item, 'minus');
+
+const itemQuantityModiy = (item: item, operation: string) => {
+
+  if (operation === 'plus') {
+    const newItem = {
+      ...item,
+      quantity: item.quantity + 1
+    }
+    return newItem;
+  }
 
   const newItem = {
     ...item,
-    quantity: item.quantity + 1
+    quantity: item.quantity - 1
   }
-  console.log(newItem);
   return newItem;
 }

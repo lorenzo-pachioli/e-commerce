@@ -8,7 +8,8 @@
             <img [src]="item.image" [alt]="item.alt">
           </div>
           <mat-card-content class="item-content">
-            <mat-card-title [matBadge]="item.quantity">{{item.title}}</mat-card-title>
+            <mat-card-title *ngIf="item.quantity > 0; else emptyCart" [matBadge]="item.quantity">{{item.title}}</mat-card-title>
+            <ng-template #emptyCart><mat-card-title>{{item.title}}</mat-card-title></ng-template>
           </mat-card-content>
         </div>
 
