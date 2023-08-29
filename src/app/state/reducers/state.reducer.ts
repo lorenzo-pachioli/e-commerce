@@ -28,10 +28,10 @@ export const stateReducer = createReducer(
       const newCart = state.cart.map(cartItem => cartItem.id === item.id ? (itemQuantityPlus(cartItem)) : (cartItem));
       return { ...state, cart: newCart };
     }
-    return { ...state, cart: [...state.cart, item] };
+    return { ...state, cart: [...state.cart, itemQuantityPlus(item)] };
   }),
   on(removeItem, (state, { id }) => {
-    if (state.cart.some(cartItem => cartItem.id === id && cartItem.quantity > 0)) {
+    if (state.cart.some(cartItem => cartItem.id === id && cartItem.quantity > 1)) {
       const newCart = state.cart.map(cartItem => cartItem.id === id ? (itemQuantityMinus(cartItem)) : (cartItem));
       return { ...state, cart: newCart };
     }
