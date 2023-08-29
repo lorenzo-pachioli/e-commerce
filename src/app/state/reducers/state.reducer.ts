@@ -8,6 +8,7 @@ export interface store {
 
 export interface item {
   id: number,
+  quantity: number,
   title: string,
   subtitle: string,
   image: string,
@@ -22,10 +23,27 @@ export let initialState: store = {
 
 export const stateReducer = createReducer(
   initialState,
-  on(addItem, (state, { item }) => ({ ...state, cart: [...state.cart, item] })),
+  on(addItem, (state, { item }) => {
+    if (state.cart.some(cartItem => cartItem.id === item.id)) {
+      const newCart = state.cart.map(cartItem => cartItem.id === item.id ? (itemQuantityPlus(cartItem)) : (cartItem));
+      return { ...state, cart: newCart };
+    }
+    return { ...state, cart: [...state.cart, item] };
+  }),
   on(removeItem, (state, { id }) => {
     const newCart = state.cart.filter(toRemove => toRemove.id !== id);
     return { ...state, cart: newCart };
   }),
   on(resetCart, (state) => ({ ...state, cart: [] }))
 );
+
+const itemQuantityPlus = (item: item) => {
+  console.log(item);
+
+  const newItem = {
+    ...item,
+    quantity: item.quantity + 1
+  }
+  console.log(newItem);
+  return newItem;
+}

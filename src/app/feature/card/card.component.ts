@@ -13,6 +13,7 @@ export class CardComponent implements OnInit {
 
   @Input() item = {
     id: 0,
+    quantity: 0,
     title: "",
     subtitle: "",
     image: "",

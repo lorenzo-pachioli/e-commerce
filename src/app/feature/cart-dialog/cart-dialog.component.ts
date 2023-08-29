@@ -21,8 +21,4 @@ export class CartDialogComponent {
   remove(id: number) {
     this.store.dispatch(removeItem({ id }));
   }
-
-  reset() {
-    this.store.dispatch(resetCart());
-  }
 }

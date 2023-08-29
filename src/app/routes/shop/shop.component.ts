@@ -10,6 +10,7 @@ export class ShopComponent implements OnInit {
   items = [
     {
       id: 1,
+      quantity: 0,
       title: "Shiba Inu 1",
       subtitle: "Dog Breed",
       image: "https://material.angular.io/assets/img/examples/shiba2.jpg",
@@ -18,6 +19,7 @@ export class ShopComponent implements OnInit {
     },
     {
       id: 2,
+      quantity: 0,
       title: "Shiba Inu 2",
       subtitle: "Dog Breed",
       image: "https://material.angular.io/assets/img/examples/shiba2.jpg",
@@ -26,6 +28,7 @@ export class ShopComponent implements OnInit {
     },
     {
       id: 3,
+      quantity: 0,
       title: "Shiba Inu 3",
       subtitle: "Dog Breed",
       image: "https://material.angular.io/assets/img/examples/shiba2.jpg",
@@ -34,6 +37,7 @@ export class ShopComponent implements OnInit {
     },
     {
       id: 4,
+      quantity: 0,
       title: "Shiba Inu 4",
       subtitle: "Dog Breed",
       image: "https://material.angular.io/assets/img/examples/shiba2.jpg",
@@ -42,6 +46,7 @@ export class ShopComponent implements OnInit {
     },
     {
       id: 5,
+      quantity: 0,
       title: "Shiba Inu 1",
       subtitle: "Dog Breed",
       image: "https://material.angular.io/assets/img/examples/shiba2.jpg",
@@ -50,6 +55,7 @@ export class ShopComponent implements OnInit {
     },
     {
       id: 6,
+      quantity: 0,
       title: "Shiba Inu 2",
       subtitle: "Dog Breed",
       image: "https://material.angular.io/assets/img/examples/shiba2.jpg",
@@ -58,6 +64,7 @@ export class ShopComponent implements OnInit {
     },
     {
       id: 7,
+      quantity: 0,
       title: "Shiba Inu 3",
       subtitle: "Dog Breed",
       image: "https://material.angular.io/assets/img/examples/shiba2.jpg",
@@ -66,6 +73,7 @@ export class ShopComponent implements OnInit {
     },
     {
       id: 8,
+      quantity: 0,
       title: "Shiba Inu 4",
       subtitle: "Dog Breed",
       image: "https://material.angular.io/assets/img/examples/shiba2.jpg",

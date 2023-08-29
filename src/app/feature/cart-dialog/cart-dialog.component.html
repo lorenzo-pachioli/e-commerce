@@ -8,7 +8,7 @@
             <img [src]="item.image" [alt]="item.alt">
           </div>
           <mat-card-content class="item-content">
-            <mat-card-title>{{item.title}}</mat-card-title>
+            <mat-card-title [matBadge]="item.quantity">{{item.title}}</mat-card-title>
           </mat-card-content>
         </div>
 
