@@ -1,14 +1,14 @@
 <div  class="cardList-container">
-    <ul *ngIf="list && list.length > 0; else emptyList">
+    <ul *ngIf="list && list.length > 0; else emptyList" [ngStyle]="{'flex-direction': direction}">
         <li *ngFor="let item of list" >
-            <div>
-                <ng-container
+            
+            <ng-container
                 [ngTemplateOutlet]="cardTemplateRef"
                 [ngTemplateOutletContext]="{$implicit:item}"
             >
             </ng-container>
-                <ng-content item={{item}}></ng-content>
-            </div>
+            <ng-content item={{item}}></ng-content>
+            
         </li>
     </ul>
     
@@ -18,7 +18,7 @@
             <h2>loading...</h2>
           </div>
         <ng-template #noList>
-            <h1>no list</h1>
+            <h1>Empty list</h1>
         </ng-template>
     </ng-template>
 </div>

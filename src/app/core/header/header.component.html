@@ -1,9 +1,11 @@
 <div class="header-container" >
-  <h1>header works!</h1>
-  <div *ngIf="store$ | async as store"> 
-    <p>user: {{ store.user }}</p>
-    <p>cart: {{ store.cart.length }}</p>
+  <h1>E-commerce!</h1>
+
+  <div>
+    <p *ngIf="store$ | async as store">{{ store.user }}</p>
+    <button mat-icon-button (click)="openDialog()">
+      <mat-icon *ngIf="cartLength > 0; else emptyCart" [matBadge]="cartLength">shopping_cart</mat-icon>
+      <ng-template #emptyCart><mat-icon>shopping_cart</mat-icon></ng-template>
+    </button>
   </div>
-  <button (click)="remove()">remove</button>
-  <button (click)="reset()">reset</button>
 </div>

@@ -4,17 +4,11 @@
 
 
     ul {
-        @include flex(center, flex-start, row);
-        width: 100%;
+        @include flex(flex-start, flex-start, row);
         min-height: 70%;
         list-style: none;
         padding: 0;
         flex-wrap: wrap;
-    }
-
-    li {
-        width: 25%;
-        padding: var(--padding1);
     }
 
     h1 {

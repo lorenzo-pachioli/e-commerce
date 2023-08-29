@@ -1,0 +1,28 @@
+<h2 mat-dialog-title>Cart</h2>
+<mat-dialog-content >
+  <app-card-list class="item-list" direction="column" *ngIf="store$ | async as store; else empty" [list]="store.cart">
+    <ng-template let-item #card>
+      <mat-card class="item-card">
+        <div>
+          <div mat-card-avatar class="mat-card-avatar">
+            <img [src]="item.image" [alt]="item.alt">
+          </div>
+          <mat-card-content class="item-content">
+            <mat-card-title>{{item.title}}</mat-card-title>
+          </mat-card-content>
+        </div>
+
+        <mat-card-actions>
+          <button mat-icon-button (click)="remove(item.id)">
+            <mat-icon>delete</mat-icon>
+          </button>
+        </mat-card-actions>
+      </mat-card>
+		</ng-template>
+  </app-card-list>
+  <ng-template #empty><p>Empty list</p></ng-template>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-button mat-dialog-close>Cancel</button>
+  <button mat-button [mat-dialog-close]="true" cdkFocusInitial>Buy</button>
+</mat-dialog-actions>

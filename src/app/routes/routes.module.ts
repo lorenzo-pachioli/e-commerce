@@ -6,6 +6,7 @@ import { ContactComponent } from './contact/contact.component';
 import { AboutUsComponent } from './about-us/about-us.component';
 import { FeatureModule } from '../feature/feature.module';
 import { AppRoutingModule } from '../app-routing.module';
+import { MaterialModule } from '../material/material.module';
 
 
 
@@ -19,7 +20,8 @@ import { AppRoutingModule } from '../app-routing.module';
   imports: [
     CommonModule,
     FeatureModule,
-    AppRoutingModule
+    AppRoutingModule,
+    MaterialModule
   ],
   exports: [
     ShopComponent,

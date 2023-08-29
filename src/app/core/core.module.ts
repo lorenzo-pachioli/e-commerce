@@ -9,6 +9,7 @@ import { FeatureModule } from '../feature/feature.module';
 import { RoutesModule } from '../routes/routes.module';
 import { AppRoutingModule } from '../app-routing.module';
 import { StateModule } from '../state/state.module';
+import { MaterialModule } from '../material/material.module';
 
 
 
@@ -25,7 +26,8 @@ import { StateModule } from '../state/state.module';
     FeatureModule,
     RoutesModule,
     AppRoutingModule,
-    StateModule
+    StateModule,
+    MaterialModule
   ],
   exports: [
     HeaderComponent,

@@ -2,4 +2,9 @@
 
 .shop-container {
   @include flex(center, flex-start, column);
+
+  .card {
+    width: 24vw;
+    padding: var(--padding1);
+  }
 }

@@ -5,4 +5,12 @@
   border: var(--border1);
   height: 10vh;
   padding: 0 var(--padding1);
+
+  div {
+    @include flex(center, space-between, row);
+
+    p {
+      margin: 0;
+    }
+  }
 }

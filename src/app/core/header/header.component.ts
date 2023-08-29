@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
+import { CartDialogComponent } from 'src/app/feature/cart-dialog/cart-dialog.component';
 import { removeItem, resetCart } from 'src/app/state/actions/state.actions';
 import { store } from 'src/app/state/reducers/state.reducer';
 
@@ -12,15 +14,25 @@ import { store } from 'src/app/state/reducers/state.reducer';
 export class HeaderComponent implements OnInit {
 
   store$: Observable<store> = new Observable<store>;
-  constructor(private store: Store<{ store: store }>) {
+  cartLength = 0;
+  constructor(private store: Store<{ store: store }>, public dialog: MatDialog) {
     this.store$ = store.select('store');
   }
 
+  openDialog(): void {
+    this.dialog.open(CartDialogComponent, {
+      width: '400px'
+    });
+  }
+
   ngOnInit(): void {
+    this.store$.subscribe(e => {
+      this.cartLength = e.cart.length;
+    })
   }
 
   remove() {
-    this.store.dispatch(removeItem({ item: 'Shiba Inu 3' }));
+    this.store.dispatch(removeItem({ id: 3 }));
   }
 
   reset() {

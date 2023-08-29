@@ -12,6 +12,7 @@ import { store } from 'src/app/state/reducers/state.reducer';
 export class CardComponent implements OnInit {
 
   @Input() item = {
+    id: 0,
     title: "",
     subtitle: "",
     image: "",
@@ -28,7 +29,7 @@ export class CardComponent implements OnInit {
   }
 
   increment() {
-    this.store.dispatch(addItem({ item: this.item.title }));
+    this.store.dispatch(addItem({ item: this.item }));
   }
 
 }

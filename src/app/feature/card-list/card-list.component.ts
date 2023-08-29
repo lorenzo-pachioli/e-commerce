@@ -10,6 +10,7 @@ export class CardListComponent implements OnInit {
 	@Input() loading = true;
 	@Input() list: Array<any> = [];
 	@Input() optional = '';
+	@Input() direction = 'row';
 	@ContentChild('card', { static: false })
 	cardTemplateRef!: TemplateRef<any>;
 
